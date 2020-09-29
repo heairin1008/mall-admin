@@ -9,26 +9,16 @@ public class OrdersDao {
 	public void updateOrdersState(Orders orders) throws Exception{
 		DBUtil dbUtil = new DBUtil();
 		Connection conn = dbUtil.getConnection();
+		System.out.println(conn+"<--conn");
 		
 		String sql = "update orders set orders_state = ? where orders_id = ?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setString(1, orders.getOrdersState());
+		stmt.setInt(2, orders.getOrdersId());
+		
 		stmt.executeUpdate();
-	}
-	
-	public Orders selectOrdersOne(int ordersId) throws Exception{
-		Orders orders = new Orders();
 		
-		DBUtil dbUtil = new DBUtil();
-		Connection conn = dbUtil.getConnection();
-		
-		String sql = "select orders_id, orders_state from orders where orders_id = ?";
-		PreparedStatement stmt = conn.prepareStatement(sql);
-		stmt.setInt(1, ordersId);
-		ResultSet rs = stmt.executeQuery();
-		while(rs.next()) {
-			
-		}
-		return null;
+		conn.close();
 	}
 	
 	// 주문상태 별 선택
