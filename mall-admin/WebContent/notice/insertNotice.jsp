@@ -5,7 +5,26 @@
 <head>
 <meta charset="UTF-8">
 <title>insertNotice</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script>
+	$(document).ready(function(){
+		console.log("ready");
+		$("#addBtn").click(function(){
+			console.log("click");
+			if($("#noticeTitle").val()==""){
+				alert("공지 제목을 입력해주세요");
+				$("#noticeTitle").focus();
+				return;
+			}else if($("#noticeContent").val() == ""){
+				alert("공지 내용을 입력해주세요");
+				$("#noticeContent").focus();
+				return;
+			}
+			$("#addForm").submit();
+		});
+	});
+</script>
 </head>
 <body>
 <div class="container">
@@ -21,18 +40,18 @@
 	%>
 	<div class="container p-3 my-3">
 	<h1>공지사항 추가</h1>
-	<form method="post" action="<%=request.getContextPath()%>/notice/insertNoticeAction.jsp">
+	<form method="post" action="<%=request.getContextPath()%>/notice/insertNoticeAction.jsp" id="addForm">
 		<table class="table table-bordered form-group">
 			<tr>
 				<td>제목</td>
-				<td><input class="form-control" type="text" name="noticeTitle"></td>
+				<td><input class="form-control" type="text" name="noticeTitle" id="noticeTitle"></td>
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><textarea class="form-control" rows="5" name="noticeContent"></textarea></td>
+				<td><textarea class="form-control" rows="5" name="noticeContent" id="noticeContent"></textarea></td>
 			</tr>
 		</table>
-		<button class="btn btn-outline-info" type="submit">등록</button>
+		<button class="btn btn-outline-info" type="button" id="addBtn">등록</button>
 	</form>
 	</div>
 </div>	
