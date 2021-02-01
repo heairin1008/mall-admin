@@ -43,8 +43,8 @@
 	%>
 	<div class="container p-3 my-3">
 	<h1>주문 목록</h1>
-	<form method="post" action="/mall-admin/orders/ordersList.jsp">
-		<select name="ordersState">
+	<form style="margin-bottom:10px;" method="post" action="/mall-admin/orders/ordersList.jsp">
+		<select class="custom-select" style="width:15%;" name="ordersState">
 			<option>선택</option>
 			<option value="">전체</option>
 			<%
@@ -64,19 +64,19 @@
 		</select>
 		<button class="btn btn-secondary"type="submit">주문상태별로 보기</button>
 	</form>
-	<table class="table">
+	<table class="table text-center">
 		<thead>
 			<tr>
-				<th>orders_id</th>
-				<th>product_id</th>
-				<th>product_name</th>
-				<th>orders_amount</th>
-				<th>orders_price</th>
-				<th>member_email</th>
-				<th>orders_addr</th>
-				<th>orders_state</th>
-				<th>orders_date</th>
-				<th>orders_state 수정</th>
+				<th>번호</th>
+				<th>상품번호</th>
+				<th>상품이름</th>
+				<th>개수</th>
+				<th>가격</th>
+				<th>회원 이메일</th>
+				<th>주소</th>
+				<th>주문현황</th>
+				<th>주문일자</th>
+				<th>주문현황 수정</th>
 			</tr>
 		</thead>
 		<tbody>

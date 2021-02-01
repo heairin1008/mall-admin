@@ -30,9 +30,9 @@
 	<table class="table table-bordered">
 		<thead>
 			<tr>
-				<th>notice_id</th>
-				<th>notice_title</th>
-				<th>notice_date</th>
+				<th>공지번호</th>
+				<th>제목</th>
+				<th>등록일</th>
 			</tr>
 		</thead>
 		<tbody>

@@ -61,11 +61,11 @@
 	<table class="table table-hover table-borderd">
 		<thead>
 			<tr>
-				<th>product_id</th>
-				<th>category_id</th>
-				<th>product_name</th>
-				<th>product_price</th>
-				<th>product_soldout</th>
+				<th>상품번호</th>
+				<th>카테고리 번호</th>
+				<th>상품명</th>
+				<th>가격</th>
+				<th>품절여부</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -74,11 +74,9 @@
 				if(p.getProductSoldout().equals("Y")){
 		%>
 				<tr>
-					<td>
-						<del><a href = "/mall-admin/product/productOne.jsp?productId=<%=p.getProductId()%>"><%=p.getProductId()%></a></del>
-					</td>
+					<td><del><%=p.getProductId()%></del></td>
 					<td><del><%=p.getCategoryId()%></del></td>
-					<td><del><%=p.getProductName()%></del></td>
+					<td><del><a class="text-dark" href="/mall-admin/product/productOne.jsp?productId=<%=p.getProductId()%>"><%=p.getProductName()%></a></del></td>
 					<td><del><%=p.getProductPrice()%></del></td>
 					<td>품절</td>
 				</tr>
@@ -87,11 +85,9 @@
 				}else{
 		%>
 				<tr>
-					<td>
-						<a href = "/mall-admin/product/productOne.jsp?productId=<%=p.getProductId()%>"><%=p.getProductId()%></a>
-					</td>
+					<td><%=p.getProductId()%></td>
 					<td><%=p.getCategoryId()%></td>
-					<td><%=p.getProductName()%></td>
+					<td><a class="text-dark" href="/mall-admin/product/productOne.jsp?productId=<%=p.getProductId()%>"><%=p.getProductName()%></a></td>
 					<td><%=p.getProductPrice()%></td>
 					<td><%=p.getProductSoldout()%></td>
 				</tr>

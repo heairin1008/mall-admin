@@ -42,11 +42,11 @@
 	<table class="table table-bordered form-group">
 		<tr>
 			<td>관리자 ID</td>
-			<td><input type="text" class="form-control" name="adminId" id="adminId"></td> 
+			<td><input type="text" class="form-control" name="adminId" id="adminId" value="admin@gmail.com"></td> 
 		</tr>
 		<tr>
 			<td>관리자 PW</td>
-			<td><input type="password" class="form-control" name="adminPw" id="adminPw"></td>
+			<td><input type="password" class="form-control" name="adminPw" id="adminPw" value="1234"></td>
 		</tr>
 	</table>
 	<button class="btn btn-secondary" style="float:right;" type="button" id="loginBtn">로그인</button>

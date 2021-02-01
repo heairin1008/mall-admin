@@ -35,8 +35,6 @@
 		
 		</table>
 	</div>
-
-	<div><img src="/mall-admin/image/main.png" class="img-thumbnail"></div>
 </div>
 </body>
 </html>
